@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    /* background-image: url('https://images.hdqwalls.com/wallpapers/vaporwave-zl.jpg'); */
+    background-size: 100%;
+}
+
+#title { 
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#color-palette{
+    height: 40px;
+    text-align: center;
+}
+
+.color {
+    display: inline-block;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+    margin-left: 1px;
+}
+
+#pixel-board {
+    margin: auto;
+    margin-top: 20px;
+    border-spacing: 1px;
+    display: table;
+}
+
+
+.line {
+    display: table-row;
+    width: 40px;
+    height: 40px;
+}
+
+.pixel {
+    display: table-cell;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+.selected {
+    background-color: #000000;
+}
