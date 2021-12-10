@@ -2,7 +2,7 @@ let penColour = 'black';
 
 // paleta de cores predileta
 
-const colorsFavorites =  ["FFFFFF","FFDBBB","FFD6BD","FFD5C4","FECDBF","FFC8C3","FFC3C2","FFBFC3","FFBAC4","FFB7C5","F5B8C1","F3AEC3","F3A6C6","F7A1C8","EF97C7","DD8CC6","D488C6","CB85C3","A776BB","976FB6","8569B4","7762B1","715BA4"]
+const colorsFavorites =  ["transparent", "FFFFFF","FFDBBB","FFD6BD","FFD5C4","FECDBF","FFC8C3","FFC3C2","FFBFC3","FFBAC4","FFB7C5","F5B8C1","F3AEC3","F3A6C6","F7A1C8","EF97C7","DD8CC6","D488C6","CB85C3","A776BB","976FB6","8569B4","7762B1","715BA4"]
 
 colorsFavorites.reverse() // array de trás pra frente
 
@@ -148,15 +148,15 @@ function preenchePixelBoard (largura){
             let divPixel = createPixel("pixel");
             linha.appendChild(divPixel)
             divPixel.addEventListener('click', changeColor)
-            divPixel.addEventListener('mousedown', function () {
+            divPixel.addEventListener('mousedown', function () { //Referência do stackoVerflow, perdi o link
                 clicado = true;
             });
               
-            divPixel.addEventListener('mouseup', function () {
+            divPixel.addEventListener('mouseup', function () { //Referência do stackoVerflow,  perdi o link
                 clicado = false;
             });
               
-            divPixel.addEventListener('mouseover', function () {
+            divPixel.addEventListener('mouseover', function () { //Referência do stackoVerflow,  perdi o link
                 if (clicado) {
                   this.style.backgroundColor = penColour;
                 }
@@ -180,7 +180,7 @@ botaoLimpar()
 function clearBoard (){
     let pixels = document.getElementsByClassName('pixel');
     for(let i of pixels){
-        i.style.backgroundColor = 'white';
+        i.style.backgroundColor = 'transparent';
     }
 }
 
