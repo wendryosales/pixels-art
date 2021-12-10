@@ -84,3 +84,15 @@ function changeColor (event){
     event.target.style.backgroundColor = penColour;
 }
 
+function botaoLimpar(){
+    let botao = document.querySelector('#clear-board');
+    botao.addEventListener("click", clearBoard);
+}
+botaoLimpar()
+
+function clearBoard (){
+    let pixels = document.getElementsByClassName('pixel');
+    for(let i of pixels){
+        i.style.backgroundColor = 'white';
+    }
+}

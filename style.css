@@ -6,8 +6,9 @@
 }
 
 body {
-/*     background-image: url('https://images.hdqwalls.com/wallpapers/vaporwave-zl.jpg');
- */    background-size: 100%;
+   /* background-image: url('https://images.hdqwalls.com/wallpapers/vaporwave-zl.jpg');*/
+    background-size: 100%;
+    text-align: center;
 }
 
 #title { 
@@ -27,6 +28,7 @@ body {
     width: 40px;
     height: 40px;
     margin-left: 1px;
+    cursor: pointer;
 }
 
 #pixel-board {
@@ -54,3 +56,25 @@ body {
 .selected {
     background-color: #000000;
 }
+
+#clear-board {
+    margin-top: 20px;
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.4s;
+    cursor: pointer ;
+}
+
+#clear-board:hover {
+    background-color: #4CAF50; 
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
