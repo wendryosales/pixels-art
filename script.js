@@ -1,5 +1,7 @@
 
 // paleta de cores
+let penColour = 'black';
+
 const colors = [/* "FFDBBB","FFD6BD","FFD5C4","FECDBF","FFC8C3","FFC3C2","FFBFC3","FFBAC4","FFB7C5","F5B8C1","F3AEC3","F3A6C6","F7A1C8","EF97C7","DD8CC6","D488C6","CB85C3","A776BB","976FB6", */"8569B4","7762B1","715BA4", "000000"];
 
 colors.reverse()
@@ -7,7 +9,7 @@ colors.reverse()
 function palletOfColors () {
     let palette = document.querySelector('#color-palette');
 
-    // percorre e cria cada cor da paleta
+    // percorre e cria cada cor da paleta e tira e coloca a classe 'selected'
     for(let i = 0; i < colors.length; i +=1 ) {
         let divColor
         if (colors[i] == "000000"){
@@ -15,20 +17,26 @@ function palletOfColors () {
             divColor.style.backgroundColor = '#' + colors[i];
             palette.appendChild(divColor);
             divColor.addEventListener("click", selection);
+            divColor.addEventListener("click",coletaCor);
         } else{
             divColor = createPixel('color');
             divColor.style.backgroundColor = '#' + colors[i];
             palette.appendChild(divColor);
             divColor.addEventListener("click", selection);
+            divColor.addEventListener("click",coletaCor);
         }
     }
 }
-
 palletOfColors()
+
+function coletaCor(){
+    penColour = this.style.backgroundColor
+    console.log(penColour)
+}
+
 
 // seleciona a cor desejada
 function selection (event) {
-    let selectionColor = event.target.style.backgroundColor; //Para saber qual é a cor
     let todasCores = document.getElementsByClassName('color');
     let corAtual = event.target;
     corAtual.classList.add('selected')
@@ -38,9 +46,6 @@ function selection (event) {
             todasCores[z].classList.remove('selected');
         }
     }
-
-    console.log(selectionColor);
-    return selectionColor
 }
 
   // Cria uma div com base nas diferentes classes (inspirado na pirâmide do bloco 5)
@@ -76,6 +81,6 @@ preenchePixelBoard(5)
 
 // troca a classe do elemento clicado mudando a cor
 function changeColor (event){
-    event.target.className = 'selected';
+    event.target.style.backgroundColor = penColour;
 }
 
