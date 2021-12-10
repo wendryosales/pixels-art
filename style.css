@@ -58,6 +58,9 @@ body {
 }
 
 #clear-board {
+
+}
+.color-button{
     margin-top: 20px;
     background-color: white; /* Green */
     border: none;
@@ -72,9 +75,12 @@ body {
     transition-duration: 0.4s;
     cursor: pointer ;
 }
-
-#clear-board:hover {
+.color-button:hover {
     background-color: #4CAF50; 
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+}
+
+#board-size {
+    width: 90px;
+}

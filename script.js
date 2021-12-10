@@ -1,7 +1,6 @@
-
-// paleta de cores
 let penColour = 'black';
 
+// paleta de cores
 const colors = [/* "FFDBBB","FFD6BD","FFD5C4","FECDBF","FFC8C3","FFC3C2","FFBFC3","FFBAC4","FFB7C5","F5B8C1","F3AEC3","F3A6C6","F7A1C8","EF97C7","DD8CC6","D488C6","CB85C3","A776BB","976FB6", */"8569B4","7762B1","715BA4", "000000"];
 
 colors.reverse()
@@ -55,6 +54,43 @@ function createPixel(className) {
     return pixel;
 }
 
+// botão de tamanho
+
+let botaoVqv = document.querySelector('#generate-board');
+let value = 5;
+
+/* botaoVqv.addEventListener("click", reset) */
+
+botaoVqv.addEventListener("click", function (){
+    reset ()
+    n = document.querySelector('#board-size');
+    value = n.value;
+    console.log(value);
+    if (value < 5 ){
+        value = 5;
+        linePixelBoard(value)
+        preenchePixelBoard(value)
+    } else if (value > 50){
+        value = 50;
+        linePixelBoard(value)
+        preenchePixelBoard(value)
+    } else {
+        linePixelBoard(value)
+        preenchePixelBoard(value)
+    }
+    n.value = ''
+});
+
+linePixelBoard(value)
+preenchePixelBoard(value)
+
+// reseta os blocos
+
+function reset (){
+    let pai = document.getElementById("pixel-board");
+
+    pai.innerHTML = '';
+}
 
 // Cria as linhas da altura
 function linePixelBoard (altura){
@@ -64,7 +100,6 @@ function linePixelBoard (altura){
         pixelBoard.appendChild(line);
     }
 }
-linePixelBoard(5)
 
 //cria as linhas da largura
 function preenchePixelBoard (largura){
@@ -77,7 +112,7 @@ function preenchePixelBoard (largura){
         }
     }
 }
-preenchePixelBoard(5)
+
 
 // troca a classe do elemento clicado mudando a cor
 function changeColor (event){
@@ -96,3 +131,4 @@ function clearBoard (){
         i.style.backgroundColor = 'white';
     }
 }
+
