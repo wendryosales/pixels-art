@@ -66,6 +66,9 @@ botaoVqv.addEventListener("click", function (){
     n = document.querySelector('#board-size');
     value = n.value;
     console.log(value);
+    if (value == ''){
+        alert ("Board inválido!");
+    }
     if (value < 5 ){
         value = 5;
         linePixelBoard(value)
