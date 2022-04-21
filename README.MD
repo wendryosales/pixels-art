@@ -29,6 +29,9 @@ Abra o arquivo Index.html com o seu navegador
 
 ![web](./pixels-art.png)
 
+## Demonstração
+
+-[Preview](https://pixels-artt.netlify.app)
 
 ## Author
 
