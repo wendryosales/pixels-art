@@ -18,7 +18,7 @@ function gerarCor() {
 //cores aleatorias
  
 let colors = ['black'];
-for (let i = 0; i < 3; i += 1){
+for (let i = 0; i < 23; i += 1){
     let cor = gerarCor()
     colors.push(cor)
 }
@@ -95,7 +95,7 @@ function createPixel(className) {
 // botão de tamanho
 
 let botaoVqv = document.querySelector('#generate-board');
-let value = 5;
+let value = 12;
 
 botaoVqv.addEventListener("click", function (){
     reset ()
@@ -105,12 +105,12 @@ botaoVqv.addEventListener("click", function (){
     if (value == ''){
         alert ("Board inválido!");
     }
-    if (value < 5 ){
-        value = 5;
+    if (value < 12 ){
+        value = 12;
         linePixelBoard(value)
         preenchePixelBoard(value)
-    } else if (value > 50){
-        value = 50;
+    } else if (value > 60){
+        value = 60;
         linePixelBoard(value)
         preenchePixelBoard(value)
     } else {
@@ -157,7 +157,7 @@ function preenchePixelBoard (largura){
             });
               
             divPixel.addEventListener('mouseover', function () { //Referência do stackoVerflow,  perdi o link
-                if (clicado) {
+                if (clicado == true) {
                   this.style.backgroundColor = penColour;
                 }
             });
